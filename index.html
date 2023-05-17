@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: rgba(201, 73, 18, 0.575);
+            text-align: center;
+            
+        }
+        input {
+            color: rgb(0, 0, 0);
+            background-color: rgba(52, 215, 73, 0.658);
+        }
+        div {
+            font: normal 25pt arial;
+            color: rgb(183, 93, 25);
+        }
+        input#n {
+            font: normal 8pt arial;
+        }
+        input#nn {
+            font: normal 8pt arial;
+        }
+        input {
+            font: normal 9pt arial;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <h1 id="h1">testzin de cria</h1>
+    
+   CAIXA DE NUMEROS <input type="number" name="n" id="n">
+    <input type="number" name="nn" id="nn">
+    <input type="button" value="adição" onclick="adição()">
+    <input type="button" value="subtração" onclick="subtração()">
+    <input type="button" value="multiplicação" onclick="mult()">
+    <input type="button" value="divisão" onclick="dx()">
+    <div id="div"></div>
+    
+    
+
+
+    <script>
+
+var di = new Date()
+        var dia = di.getDay()
+        var hor = di.getHours()
+        var min = di.getMinutes()
+        var seg = di.getSeconds()                
+        var mil = di.getMilliseconds()           
+        switch(dia) {                            
+        case 0:                                  
+        var d = ("DOMINGO")                      
+        break
+        case 1: 
+        var d = ("SEGUNDA")
+        break
+        case 2: 
+        var d = ("TERÇA")
+        break
+        case 3:
+        var d = ('QUARTA')
+        break
+        case 4:
+        var d = ("QUINTA")
+        break
+        case 5:
+        var d = ("SEXTA")
+        break
+        case 6:
+        var d = ("SABADO")
+        break
+        default: 
+        var d = ("[ERRO.64]")
+        break
+        } 
+        
+        
+            var h1 = document.getElementById("h1")
+             
+                if (hor >= 8 && hor <= 12  ) {
+        h1.innerHTML = `boa dia, ${hor}:${min} horario atual e atualmente é ${d}`
+        } else if (hor >= 13 && hor < 20) {
+        h1.innerHTML = `boa tarde, ${hor}:${min} horario atual e atualmente é ${d}`
+    } else if (hor >= 20) {
+        h1.innerHTML = `boa noite, ${hor}:${min} horario atual e atualmente é ${d}`
+    } else if (hor >= 0 ) {
+        h1.innerHTML = `boa madrugada, ${hor}:${min} horario atual e atualmente  ${d} `
+    }
+    
+    
+
+
+
+        function adição() {
+            var n = document.getElementById("n")
+            var nn = document.getElementById("nn")
+            var div = document.getElementById("div")
+            var n2 = Number(n.value)
+            var nn2 = Number(nn.value)
+            var r = nn2 + n2
+
+            div.innerHTML = `o resultado é  ${r}`
+        }
+        function subtração() {
+            var n = document.getElementById("n")
+            var nn = document.getElementById("nn")
+            var div = document.getElementById("div")
+            var n2 = Number(n.value)
+            var nn2 = Number(nn.value)
+            var r = n2 - nn2
+
+            div.innerHTML = `o resultado é  ${r}`
+        }
+        function mult() {
+            var n = document.getElementById("n")
+            var nn = document.getElementById("nn")
+            var div = document.getElementById("div")
+            var n2 = Number(n.value)
+            var nn2 = Number(nn.value)
+            var r = nn2 * n2
+
+            div.innerHTML = `o resultado é ${r}`
+        }
+        function dx() {
+            var n = document.getElementById("n")
+            var nn = document.getElementById("nn")
+            var div = document.getElementById("div")
+            var n2 = Number(n.value)
+            var nn2 = Number(nn.value)
+            var r = n2 / nn2
+
+            div.innerHTML = `o resultado é ${r}`
+        }
+    </script>
+    
+</body>
+</html>
